@@ -26,3 +26,6 @@ select * from AddressBook_Table
 
 Delete from AddressBook_Table where Firstname='riya' and Lastname='khairnar'
 select * from AddressBook_Table
+
+Select * from AddressBook_Table where City='surat' Order By FirstName;
+Select * from AddressBook_Table where State='UP' Order By FirstName;
