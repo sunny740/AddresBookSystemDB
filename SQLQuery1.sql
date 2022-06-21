@@ -17,3 +17,9 @@ Values('Sunny', 'Sej', 'Ghandhi Road', 'Gwa', 'MP', 475010, 9817782365, 'Sunny12
 ('Himansh', 'Mehra', 'Kappa Road','Noida', 'UP', 547965, 8926452301, 'himansh49@gmail.com'),
 ('komal','patil','saibaba nagar','surat','gujarat',34567,'7854216785','komal222@gmail.com'),
 ('riya','khairnar','shiv nagar','jaipur','Rajasthan',432007,'7285108928','riya8993@gmail.com');
+
+select * from AddressBook_Table
+
+Update AddressBook_Table set PhoneNumber = 8006907440 where Firstname = 'Himansh';
+Update AddressBook_Table Set Address='bhilai',ZipCode='491335' where FirstName='riya';
+select * from AddressBook_Table
