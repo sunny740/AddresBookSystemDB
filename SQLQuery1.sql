@@ -39,3 +39,8 @@ Select Count(*),State,City from AddressBook_Table Group by State,City;
 select FirstName from AddressBook_Table Order By City ASC;
 select FirstName,LastName,City from AddressBook_Table Order By City DESC;
 select city from AddressBook_Table order by LastName;
+
+Alter table AddressBook_Table Add Type VARCHAR(20)
+Update AddressBook_Table SET Type = 'Friends' where Firstname = 'Himansh'
+Update AddressBook_Table SET Type = 'Family' where Firstname = 'Komal'
+Update AddressBook_Table SET Type = 'Family' where Firstname = 'riya'
