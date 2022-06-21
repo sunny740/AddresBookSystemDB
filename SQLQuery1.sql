@@ -23,3 +23,6 @@ select * from AddressBook_Table
 Update AddressBook_Table set PhoneNumber = 8006907440 where Firstname = 'Himansh';
 Update AddressBook_Table Set Address='bhilai',ZipCode='491335' where FirstName='riya';
 select * from AddressBook_Table
+
+Delete from AddressBook_Table where Firstname='riya' and Lastname='khairnar'
+select * from AddressBook_Table
