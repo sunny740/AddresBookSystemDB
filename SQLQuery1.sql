@@ -35,3 +35,7 @@ select count(*) from AddressBook_Table where city='Gwa';
 select count(*) from AddressBook_Table where State='AP';
 
 Select Count(*),State,City from AddressBook_Table Group by State,City;
+
+select FirstName from AddressBook_Table Order By City ASC;
+select FirstName,LastName,City from AddressBook_Table Order By City DESC;
+select city from AddressBook_Table order by LastName;
