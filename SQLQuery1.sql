@@ -1,4 +1,5 @@
 create database AddressBook_Service
+
 create table AddressBook_Table
 (ID int IDENTITY(1,1) Primary Key,
 FirstName varchar(15)Not Null,
@@ -47,12 +48,13 @@ Update AddressBook_Table SET Type = 'Family' where Firstname = 'riya'
 
  select count(*),Type from AddressBook_Table group by Type;
 
- alter table Addressbook Drop column Type;
+ alter table AddressBook_Table Drop column Type;
 
 Select* from AddressBook_Table;
 
-Create table AddressBookType( TypeId int NOT NULL Primary Key  Identity(1,1),Type varchar(25), );
+Create table AddressBookType( TypeId int NOT NULL Primary Key  Identity(1,1),Type varchar(25));
 
+select* from AddressBookType
 
 Create table AddressBookMapping( MappingID int primary key Identity (1,1),
 AddressBookID int,
@@ -70,3 +72,16 @@ Insert into AddressBookType values('Friends'),('Family'),('Profession'),('others
 Insert into AddressBookMapping(AddressBookID,Typeid)values(1,1),(1,2);
 
 select * from AddressBook_Table INNER JOIN AddressBookMapping ON AddressBookID=AddressBookMapping.AddressBookID INNER JOIN AddressBookType ON AddressBookType.Typeid=AddressBookMapping.Typeid
+
+create table Location
+(ID int,
+Area varchar (20)
+constraint Location_foreign_Key_ID foreign key(ID) references AddressBook_Table(ID) on delete cascade)
+
+create table TypeTable
+(ID int,
+Type varchar(20),
+constraint TypeTable_foreign_key foreign key(ID) references AddressBook_Table(ID) on delete cascade) 
+Insert into TypeTable select ID, Type from AddressBook_Table
+
+select*
