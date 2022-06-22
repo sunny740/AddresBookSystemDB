@@ -84,4 +84,7 @@ Type varchar(20),
 constraint TypeTable_foreign_key foreign key(ID) references AddressBook_Table(ID) on delete cascade) 
 Insert into TypeTable select ID, Type from AddressBook_Table
 
-select*
+Select * from AddressBook_Table where City = 'Delhi' or State = 'Uttar Pradesh'
+Select Count(*),State,City from AddressBook_Table Group by State,City
+select * from AddressBook_Table where City='Dehradun' order by Firstname
+Select COUNT(*),Type from AddressBook_Table Group by Type
