@@ -46,3 +46,27 @@ Update AddressBook_Table SET Type = 'Family' where Firstname = 'Komal'
 Update AddressBook_Table SET Type = 'Family' where Firstname = 'riya'
 
  select count(*),Type from AddressBook_Table group by Type;
+
+ alter table Addressbook Drop column Type;
+
+Select* from AddressBook_Table;
+
+Create table AddressBookType( TypeId int NOT NULL Primary Key  Identity(1,1),Type varchar(25), );
+
+
+Create table AddressBookMapping( MappingID int primary key Identity (1,1),
+AddressBookID int,
+Typeid int,
+);
+
+alter table AddressBookMapping ADD Foreign key (AddressBookID) References AddressBook(Id);
+alter table AddressBookMapping ADD Foreign key (Typeid) References AddressBookType(Typeid);
+
+select * from AddressBookType;
+select * from AddressBookMapping;
+
+Insert into AddressBookType values('Friends'),('Family'),('Profession'),('others');
+
+Insert into AddressBookMapping(AddressBookID,Typeid)values(1,1),(1,2);
+
+select * from AddressBook_Table INNER JOIN AddressBookMapping ON AddressBookID=AddressBookMapping.AddressBookID INNER JOIN AddressBookType ON AddressBookType.Typeid=AddressBookMapping.Typeid
